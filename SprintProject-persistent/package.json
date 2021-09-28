@@ -1,18 +1,33 @@
 {
-  "name": "sprint-project-tamplate",
-  "version": "1.0.0",
-  "description": "***Sprint Project de Backend development de Acámica.***",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "express-basic-auth": "^1.2.0",
+    "express-jwt": "^6.1.0",
+    "helmet": "^4.6.0",
+    "joi": "^17.4.2",
+    "jsonwebtoken": "^8.5.1",
+    "mariadb": "^2.5.4",
+    "redis": "^3.1.2",
+    "sequelize": "^6.6.5",
     "swagger-jsdoc": "^6.1.0",
     "swagger-ui-express": "^4.1.6"
+  },
+  "name": "sprintproject-persistente",
+  "version": "1.0.0",
+  "description": "Sprint Project REST-API  Delilah Resto",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha src/test/*.js",
+    "dev": "node src/server.js",
+    "start": "nodemon src/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "chai-http": "^4.3.0",
+    "mocha": "^9.1.1",
+    "nodemon": "^2.0.12"
   }
 }

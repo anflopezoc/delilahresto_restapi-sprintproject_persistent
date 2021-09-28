@@ -1,10 +1,12 @@
+const config = require('../config/config').module;
+
 const swaggerOptions = {
     definition: {
         openapi: "3.0.0",
         info: {
-            title: "Delilah Restó -Project Sprint 1 Acámica",
-            version: "1.0.0",
-            description: "Proyecto de Rest-API para Sprint 1 de Acámica"
+            title: "REST API Delilah Restó- Sprint Project 2 Acámica with DB",
+            version: "2.0.0",
+            description: "REST API for orders of Delilah Restó users made with Node JS and MariaDB"
         },
         servers: [
             {
@@ -12,11 +14,22 @@ const swaggerOptions = {
                 description: "Local server"
             }
         ],
+        tags: [
+            {
+                name: "Account",
+                description: "Signin and login route."
+            },
+            {
+                name: "Users",
+                description: "User management route (Only Admin User)"
+            }
+        ],
         components: {
             securitySchemes: {
-                basicAuth: {
+                bearerAuth: {
                     type: "http",
-                    scheme: "basic"
+                    scheme: "bearer",
+                    bearerFormat: "JWT"
                 }
             }
         },
@@ -24,7 +37,7 @@ const swaggerOptions = {
 
         ]
     },
-    apis: ["./src/routes/*.js"]
+    apis: ["./src/routes/*.js", "./components.yaml"]
 };
 
 module.exports = swaggerOptions;
