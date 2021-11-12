@@ -1,7 +1,7 @@
 const redis = require('redis');
-const REDISPORT = parseInt(require('../config/config').module.REDISPORT)
+const REDISURL = require('../config/config').module.REDISURL
 
-const client = redis.createClient(REDISPORT);
+const client = redis.createClient(REDISURL);
 
 const cache = async (req, res, next) => {
     client.get('Products', (err,data) => {

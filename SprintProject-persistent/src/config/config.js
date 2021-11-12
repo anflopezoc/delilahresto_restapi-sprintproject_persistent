@@ -11,5 +11,5 @@ exports.module ={
     DB_password: process.env.DB_PASSWORD,
     DB_database: process.env.DB_DATABASE, 
     ADMINPASSWORD: process.env.ADMINPASSWORD,
-    REDISPORT: process.env.REDISPORT
+    REDISURL: process.env.REDISURL
 }

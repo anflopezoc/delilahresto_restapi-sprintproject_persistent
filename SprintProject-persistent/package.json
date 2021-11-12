@@ -19,8 +19,8 @@
   "main": "server.js",
   "scripts": {
     "test": "mocha src/test/*.js",
-    "dev": "node src/server.js",
-    "start": "nodemon src/server.js"
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
   },
   "author": "",
   "license": "ISC",

@@ -1,9 +1,5 @@
-# Guía de uso de la API para ordenes de Delilah Restó.
-***Sprint Project de Backend development de Acámica.***
-
-**Actualización julio 9 de 2021** : 
-	1. Acceso al endpoint de login en ruta de registro.
-	2. Actualización de productos en oferta de Delilah Restó.
+# Guía de uso de la REST API para ordenes de Delilah Restó.
+***Sprint Project 2. ***
 
 ## ¿Qué permite hacer esta API para Delilah Restó?
 Esta API está diseñada para la gestión de las ordenes del restaurante Delilah Restó. Los usuarios podrán registrarse para poder ordenar sus ordenes en Delilah Restó para facilitarles a ellos una efectiva toma de la orden deseada de cada usuario y así garantizar una positiva experiencia de usuario en Delilah Restó.
