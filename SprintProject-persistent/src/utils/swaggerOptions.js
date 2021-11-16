@@ -21,7 +21,11 @@ const swaggerOptions = {
             },
             {
                 name: "Users",
-                description: "User management route (Only Admin User)"
+                description: "User management route (Only access to the Admin User)"
+            },
+            {
+                name: "User_addresses",
+                description: "User addresses management route"
             }
         ],
         components: {

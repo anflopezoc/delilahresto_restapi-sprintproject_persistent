@@ -4,6 +4,10 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false
         },
+        city: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         isActive: {
             type: DataTypes.BOOLEAN,
             defaultValue: true

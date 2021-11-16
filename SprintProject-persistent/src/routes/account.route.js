@@ -22,13 +22,14 @@ const middlewareUser = require('../middlewares/uservalidator.middleware')
 *                     type: 
 *                          object             
 *          responses:
-*                  '201':
-*                      description: creacion exitosa de la cuenta
+*                  '201': 
+*                      description: The user has been registered
 *                      content:
 *                          'aplication/json': {}
 *                          'aplication/xml': {}
 *
-*                  404:
+*                  400: 
+*                      description: The user  cannot be registered
 *                      content:
 *                          'aplication/json': {}
 *                          'aplication/xml': {}
@@ -56,12 +57,18 @@ router.post('/register',middlewareUser.repeatedemail, controller.signUser);
  *                          object             
  *          responses:
  *                  '200':
- *      
+ *                      description: The login has been 
  *                      content: 
  *                          'aplication/json': {}
  *                          'aplication/xml': {}
  *
- *                  400:                
+ *                  401:
+ *                      description: Unautorized               
+ *                      content:
+ *                          'aplication/json': {}
+ *                          'aplication/xml': {}
+ *                  404:
+ *                      description: User not found              
  *                      content:
  *                          'aplication/json': {}
  *                          'aplication/xml': {}
@@ -87,11 +94,11 @@ router.post('/login', controller.login);
  *          properties:
  *              name:
  *                  type: string
- *                  example: Erick Wollf
+ *                  example: Erick Wolff
  *                  description: user name and last name 
  *              email:
  *                  type: string
- *                  example: erickwollf@gmail.com
+ *                  example: erickwolff@gmail.com
  *                  description: email user
  *              phone:
  *                  type: number
@@ -123,7 +130,7 @@ router.post('/login', controller.login);
  *          properties:
  *              email:
  *                  type: string
- *                  example: erickwollf@gmail.com
+ *                  example: erickwolff@gmail.com
  *                  description: correo electrónico del usuario
  *              password:
  *                  type: string

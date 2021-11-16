@@ -51,7 +51,7 @@ exports.userInactivate = async (req, res) => {
         const id = parseInt(req.params.id);
 
         const user = await db.Users.findOne({where:{id}});
-        if (!user) res.status(400).json('User ID does not exist in database')
+        if (!user) res.status(404).json('User ID not found')
         else {
             if (user.id == 1) res.status(400).json('Admin User can not be inactivated')
             else {
@@ -67,7 +67,7 @@ exports.userInactivate = async (req, res) => {
             
         }
     } catch (err) {
-        res.status(400).json(err)        
+        res.status(404).json(err)        
     }
 };
 
@@ -96,6 +96,6 @@ exports.userUpdate = async (req,res) => {
             };
         
     } catch (err) {
-        res.status(400).json(err.details[0].message)
+        res.status(404).json(err.details[0].message)
     }
 }
