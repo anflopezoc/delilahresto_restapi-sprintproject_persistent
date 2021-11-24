@@ -22,12 +22,12 @@ const adminDefault = async () => {
         await db.Orders.findOrCreate({
             where:{
                 email:userAdmin[0].email,
-                stateorderId:1
+                statusorderId:1
             },
             defaults:{
                 email:userAdmin[0].email,
                 userId:userAdmin[0].id,
-                stateorderId:1
+                statusorderId:1
             }
         });
     const userDefault = await db.Users.findOrCreate({
@@ -47,12 +47,12 @@ const adminDefault = async () => {
         await db.Orders.findOrCreate({
                 where:{
                     email:userDefault[0].email,
-                    stateorderId:1
+                    statusorderId:1
                 },
                 defaults:{
                     email:userDefault[0].email,
                     userId:userDefault[0].id,
-                    stateorderId:1
+                    statusorderId:1
                 }
             });
  }

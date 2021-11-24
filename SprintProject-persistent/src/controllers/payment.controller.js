@@ -1,16 +1,25 @@
 const db = require('../DB/db');
 
 exports.allPayment = async (req, res) => {
-    const payments = await db.Payments.findAll({where:{isActive:true}});
+    const payments = await db.Payments.findAll({
+                                                where:{
+                                                    isActive:true
+                                                    }});
     res.status(200).json(payments)
 };
 
 exports.newPayment = async (req, res) => {
     try {
         const {method} = req.body;
-        const Method =  await db.Payments.findOne({where:{method}});
-        if (!Method) {
-            const newMethod = await db.Payments.create({method});
+        const Method =  await db.Payments.findOne({
+                                                    where:{
+                                                        method
+                                                        }
+                                                    });
+            if (!Method) {
+            const newMethod = await db.Payments.create({
+                                                        method
+                                                        });
             res.status(200).json(newMethod)
         } else res.status(400).json('The payment method already exists')
     } catch (error) {

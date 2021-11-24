@@ -13,26 +13,36 @@ exports.signUser= async (req ,res) => {
             password,
             phone
         } = await userSchema.validateAsync(req.body);
-        const newUser = await db.Users.create({
-            name,
-            email,
-            password: bcrypt.hashSync(password, 10),
-            phone
-        });
+        const newUser =  await db.Users.create({
+                                name,
+                                email,
+                                password: bcrypt.hashSync(password, 10),
+                                phone
+                                    });
         await db.Orders.findOrCreate({
-            where:{
-                email:newUser.email,
-                stateorderId:1
-            },
-            defaults:{
-                email:newUser.email,
-                userId:newUser.id,
-                stateorderId:1
-            }
-        });
-        res.status(200).json(newUser)
+                                    where:{
+                                        email:newUser.email,
+                                        statusorderId:1
+                                    },
+                                    defaults:{
+                                        email:newUser.email,
+                                        userId:newUser.id,
+                                        statusorderId:1
+                                    }
+                                });
+        const User = await db.Users.findOne({
+                                            where:{
+                                                email:email
+                                            },
+                                            attributes: [
+                                                'name',
+                                                'email',
+                                                'phone'
+                                            ]
+                                        });
+        res.status(200).json(User)
     } catch (error) {
-        res.status(404).json(error.details[0].message)
+        res.status(404).json(error)
     };
 }
 

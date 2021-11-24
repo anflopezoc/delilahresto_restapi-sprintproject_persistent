@@ -30,7 +30,7 @@ const db = {};
       db.Users = require('../models/user.model')(sequelize, DataTypes);
       db.Products = require('../models/product.model')(sequelize, DataTypes);
       db.Addresses = require('../models/address.model')(sequelize, DataTypes);
-      db.Stateorders = require('../models/statesOrder.model')(sequelize, DataTypes);
+      db.Statusorders = require('../models/statusOrder.model')(sequelize, DataTypes);
       db.Orders = require('../models/orders.models')(sequelize, DataTypes);
       db.OrderProducts = require('../models/orderProducts.model')(sequelize, DataTypes);
       db.Payments = require('../models/paymethods.models')(sequelize, DataTypes);
@@ -52,8 +52,8 @@ const db = {};
       db.Payments.hasMany(db.Orders);
       db.Orders.belongsTo(db.Payments);
       
-      db.Stateorders.hasMany(db.Orders);
-      db.Orders.belongsTo(db.Stateorders);
+      db.Statusorders.hasMany(db.Orders);
+      db.Orders.belongsTo(db.Statusorders);
 
       db.Products.hasMany(db.OrderProducts);
       db.OrderProducts.belongsTo(db.Products);
@@ -64,7 +64,7 @@ const db = {};
       await sequelize.sync({ force: false });
       require('../default/user.default')();
       require('../default/products.default')();
-      require('../default/stateOrders.default')();
+      require('../default/statusOrders.default')();
       require('../default/payments.default')();
       console.log('Connection has been established successfully.');
   } catch (error) {

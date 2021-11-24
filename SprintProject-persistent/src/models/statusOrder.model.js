@@ -1,10 +1,10 @@
 module.exports = (Sequelize, DataTypes) => {
-    const Stateorder = Sequelize.define('stateorder', {
-        stateName: {
+    const Statusorder = Sequelize.define('statusorder', {
+        statusName: {
             type: DataTypes.STRING,
             allowNull: false
         },
     });
 
-    return Stateorder
+    return Statusorder
 }

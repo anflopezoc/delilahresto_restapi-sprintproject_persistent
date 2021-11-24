@@ -31,12 +31,12 @@ exports.createUser = async (req,res) => {
         await db.Orders.findOrCreate({
             where:{
                 email:newUser.email,
-                stateorderId:1
+                statusorderId:1
             },
             defaults:{
                 email:newUser.email,
                 userId:newUser.id,
-                stateorderId:1
+                statusorderId:1
             }
         });
         res.status(200).json(newUser)
@@ -57,10 +57,14 @@ exports.userInactivate = async (req, res) => {
             else {
                 if(user.isActive == false ) res.status(400).json('User was already inactivated')
                 else {
-                    const userInactivate = await db.Users.update({
-                        isActive: false
-                        },
-                        {where:{id}})
+                     await db.Users.update({
+                                            isActive: false
+                                            },
+                                            {
+                                            where:{
+                                                    id
+                                                 }
+                                            });
                     res.status(200).json(`User ID ${req.params.id} has been inactivated`)
                 }
             }

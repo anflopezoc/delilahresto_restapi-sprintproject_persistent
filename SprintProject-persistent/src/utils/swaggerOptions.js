@@ -26,6 +26,22 @@ const swaggerOptions = {
             {
                 name: "User_addresses",
                 description: "User addresses management route"
+            },
+            {
+                name: "Products",
+                description: "Route for managing the offer of products in Delilah Resto, only access to the Administrator User (Note: any user can see the path of all products)"
+            },
+            {
+                name: "Payment_Methods",
+                description: "Route for managing the payment methods for orders only access to the Administrator User (Note: any user can see the path of all payements methods)."
+            },
+            {
+                name: "Orders",
+                description: "Route for orders in Delilah Resto. In this route, users can add and remove the products in the order, add an address to ship, confirm the order, and view the historical orders related to the user."
+            },
+            {
+                name: "Order_Managment",
+                description: "Route for magment orders in Delilah Resto (Only access to the Admin User)."
             }
         ],
         components: {

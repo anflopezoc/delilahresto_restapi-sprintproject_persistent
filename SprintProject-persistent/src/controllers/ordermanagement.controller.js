@@ -2,8 +2,8 @@ const db = require('../DB/db');
 
 exports.allStatemethods = async (req, res) => {
     try {
-        const States = await db.Stateorders.findAll();
-        res.status(200).json(States)
+        const allStatus = await db.Statusorders.findAll();
+        res.status(200).json(allStatus)
     } catch (error) {
         res.status(404).json('There are error')
     }
@@ -27,16 +27,16 @@ exports.stateorder = async (req, res) => {
                                                 id:req.params.idOrder
                                                 }
                                             });
-        const state = await db.Stateorders.findOne({
+        const status = await db.Statusorders.findOne({
                                                     where:{
-                                                        id:req.params.idState
+                                                        id:req.params.idStatus
                                                         }
                                                     });
         if (order) {
-            if (state) {
-                if (order.stateorderId !== 1) {
-                    if (state.id !== 1) {
-                         await db.Orders.update({stateorderId: state.id },{
+            if (status) {
+                if (order.statusorderId !== 1) {
+                    if (status.id !== 1) {
+                         await db.Orders.update({statusorderId: status.id },{
                                                     where:{
                                                         id:order.id
                                                         }});
@@ -46,9 +46,9 @@ exports.stateorder = async (req, res) => {
                                 }
                             });
                         res.status(200).json(neworderQuery)
-                    } else res.status(400).json(`The order cannot return to 'Pendiente' state`);
+                    } else res.status(400).json(`The order cannot return to 'Pendiente' status`);
                 } else res.status(400).json(`The order with id ${order.id} has not been confirmed`);
-            } else res.status(400).json('The State does no exists');
+            } else res.status(400).json('The Status does no exists');
         } else res.status(400).json('The order does no exists');        
     } catch (error) {
         res.status(404).json('There are error');
