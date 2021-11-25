@@ -6,13 +6,13 @@ const adminDefault = async () => {
    const userAdmin = await db.Users.findOrCreate({
         where: 
             {
-            email: 'admin@delilah.com',
+            email: config.module.ADMINUSER,
             isAdmin: true
             },
         defaults: 
             {
             name: 'Admin Delilah Resto',
-            email: 'admin@delilah.com',
+            email: config.module.ADMINUSER,
             password: bcrypt.hashSync(config.module.ADMINPASSWORD, 10),
             phone: '3144488865',
             isAdmin: true

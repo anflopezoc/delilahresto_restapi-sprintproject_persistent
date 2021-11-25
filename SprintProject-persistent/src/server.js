@@ -31,7 +31,7 @@ app.use('/orders', require('./routes/orders.route'));
 app.use('/ordermanagement', require('./routes/ordermanagement.route'));
 
 //Server Port
-app.listen(PORT, () => {console.log(`listen port ${PORT}`);})
+app.listen(PORT, () => {console.log(`Server in Port ${PORT}`)})
 
 module.exports = app;
 
