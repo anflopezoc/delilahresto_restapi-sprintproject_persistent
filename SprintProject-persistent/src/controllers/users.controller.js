@@ -39,8 +39,9 @@ exports.createUser = async (req,res) => {
                 statusorderId:1
             }
         });
-        res.status(200).json(newUser)
-        
+
+
+        res.status(200).json(newUser)        
     } catch (err) {
         res.status(404).json(err)        
     }
@@ -78,8 +79,12 @@ exports.userInactivate = async (req, res) => {
 exports.userUpdate = async (req,res) => {
     try {
         const id = parseInt(req.params.id);
-        const user = await db.Users.findOne({where:{id}});
-        console.log(user);
+        const user = await db.Users.findOne({
+                                            where:{
+                                                    id,
+                                                    isActive: true
+                                                }
+                                            });
         if (!user){res.status(400).json('User ID does not exist in database')}
         else {
             const {
@@ -95,11 +100,43 @@ exports.userUpdate = async (req,res) => {
                 email,
                 password: bcrypt.hashSync(password, 10),
                 name},
-                {where:{id}})
+                {
+                    where:{
+                            id
+                        }
+                    })
             res.status(200).json(`User ${user.email} update`)      
-            };
-        
+        };
     } catch (err) {
         res.status(404).json(err.details[0].message)
     }
-}
+};
+
+exports.userActivate = async (req, res) => {
+    try {
+        const id = parseInt(req.params.id);
+
+        const user = await db.Users.findOne({where:{id}});
+        if (!user) res.status(404).json('User ID not found')
+        else {
+            if (user.id == 1) res.status(400).json('Admin User can not be activated')
+            else {
+                if(user.isActive == true ) res.status(400).json(`User ID ${id} is active`)
+                else {
+                    await db.Users.update({
+                                        isActive: true
+                                        },
+                                        {
+                                        where:{
+                                                id
+                                            }
+                                        });
+                    res.status(200).json(`User ID ${id} has been activated`)
+                }
+            }
+            
+        }
+    } catch (err) {
+        res.status(404).json(err)        
+    }
+};

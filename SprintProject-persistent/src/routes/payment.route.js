@@ -136,6 +136,38 @@ router.put('/updatepayment/:id', middlewareAdmin, controller.updatePayment);
 */
 router.delete('/inactivatepayment/:id', middlewareAdmin, controller.inactivatePayment);
 
+/**
+* @swagger
+* /payments/activatepayment/{id}:
+*       put:
+*          summary: Activate a payment methods.
+*          description: End point to activate a payment methods for orders.
+*          tags: [Payment_Methods]
+*          security: 
+*                   - bearerAuth: []
+*          parameters:
+*            - in: path
+*              name: id
+*              description: Payment Method ID.
+*              required: true
+*              type: integer   
+*          responses:
+*                  '200':
+*                      content:
+*                          'aplication/json': {}
+*                          'aplication/xml': {}
+*                  '400':
+*                      content:
+*                          'aplication/json': {}
+*                          'aplication/xml': {}
+*                  '404':
+*                      content:
+*                          'aplication/json': {}
+*                          'aplication/xml': {}
+*/
+router.put('/activatepayment/:id', middlewareAdmin, controller.activatePayment);
+
+
 // -----Schemas Swagger-----
 
 /**

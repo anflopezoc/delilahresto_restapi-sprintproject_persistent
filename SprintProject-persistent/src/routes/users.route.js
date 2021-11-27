@@ -107,7 +107,7 @@ router.put('/userupdate/:id', controller.userUpdate);
  * /users/userinactive/{id}:
  *      delete:
 *          summary: User inactivation path(Admin restriction).
-*          description: The endpoint requires a user id to deactivate, however, you cannot deactivate the admin user. Returns a text that announces the inactive user. 
+*          description: The endpoint requires a user id to deactivate, however, you cannot inactivate the admin user. Returns a text that announces the inactive user. 
 *          tags: [Users]
 *          security: 
 *                   - bearerAuth: []  
@@ -133,6 +133,36 @@ router.put('/userupdate/:id', controller.userUpdate);
  */
 router.delete('/userinactive/:id', controller.userInactivate);
 
+/**
+ * @swagger
+ * /users/useractive/{id}:
+ *      put:
+*          summary: User activation path(Admin restriction).
+*          description: The endpoint requires a user id to activate, however, you cannot inactivate or activate the admin user. Returns a text that announces the active user. 
+*          tags: [Users]
+*          security: 
+*                   - bearerAuth: []  
+*          parameters:
+*            - in: path
+*              name: id
+*              description: User ID
+*              required: true
+*              type: integer         
+*          responses:
+*                  '201':
+*                      content:
+*                          'aplication/json': {}
+*                          'aplication/xml': {}
+*                  400:
+*                      content:
+*                          'aplication/json': {}
+*                          'aplication/xml': {}
+*                  404:
+*                      content:
+*                          'aplication/json': {}
+*                          'aplication/xml': {}
+ */
+router.put('/useractive/:id', controller.userActivate);
 
 // -----Schemas Swagger-----
 
@@ -153,11 +183,11 @@ router.delete('/userinactive/:id', controller.userInactivate);
  *          properties:
  *              name:
  *                  type: string
- *                  example: Erick Wollf
+ *                  example: Andres Lopez
  *                  description: user name and last name 
  *              email:
  *                  type: string
- *                  example: erickwolff@gmail.com
+ *                  example: anflopezoc@gmail.com
  *                  description: email user
  *              phone: 
  *                  type: number

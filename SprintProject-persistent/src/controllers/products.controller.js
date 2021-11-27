@@ -33,7 +33,8 @@ exports.productUpdate = async (req, res) => {
      const id = parseInt(req.params.id);
      const product = await db.Products.findOne({
                                                 where:{
-                                                        id
+                                                        id,
+                                                        isActive: true
                                                         }
                                                     });
      if (product) {
@@ -66,4 +67,28 @@ exports.inactiveproduct = async (req, res) => {
     } catch (err) {
         res.status(404).json(err)
     }
-}
+};
+
+
+
+exports.activeproduct = async (req, res) => {
+    try {
+        const id = parseInt(req.params.id);
+        const product = await db.Products.findOne({where:{id}});
+        if (product) {
+            if (product.isActive == true) res.status(400).json(`Product ID ${id} is active`)
+            else {
+                 await db.Products.update({
+                                        isActive:true},
+                                        {where:{ 
+                                                id
+                                                }   
+                                            });
+                client.del('Products');
+                res.status(200).json(`Product with ID ${id} has been actived`)
+            }
+        } else res.status(400).json(`Product with ID ${id} does not existe`)
+    } catch (err) {
+        res.status(404).json(err)
+    }
+};

@@ -128,6 +128,36 @@ router.put('/productupdate/:id', middlewareAdmin, controller.productUpdate, cach
 */
 router.delete('/productinactive/:id', middlewareAdmin, controller.inactiveproduct, cache);
 
+/**
+* @swagger
+* /products/productactive/{id}:
+*      put:
+*          summary: Inactive product.
+*          description: End point to active the product in Delilah Resto offer. It requires the Product Id in the path and returns a string notifying "Product with ID ## has been activated".
+*          tags: [Products]
+*          security: 
+*                   - bearerAuth: []
+*          parameters:
+*            - in: path
+*              name: id
+*              description: Product ID.
+*              required: true
+*              type: integer      
+*          responses:
+*                  '200':
+*                      content:
+*                          'aplication/json': {}
+*                          'aplication/xml': {}
+*                  '400':
+*                      content:
+*                          'aplication/json': {}
+*                          'aplication/xml': {}
+*                  '404':
+*                      content:
+*                          'aplication/json': {}
+*                          'aplication/xml': {}
+*/
+router.put('/productactive/:id', middlewareAdmin, controller.activeproduct, cache);
 module.exports = router;
 
 // -----Schemas Swagger-----

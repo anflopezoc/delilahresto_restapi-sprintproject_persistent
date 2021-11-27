@@ -1,3 +1,4 @@
+
 const db = require('../DB/db');
 
 exports.allPayment = async (req, res) => {
@@ -47,12 +48,49 @@ exports.updatePayment = async (req, res) => {
 exports.inactivatePayment = async (req, res) => {
     try {
         const id = parseInt(req.params.id);
-        const Method =  await db.Payments.findOne({where:{id,isActive:true}});
+        const Method =  await db.Payments.findOne({
+                                                    where:{
+                                                            id
+                                                        }
+                                                    });
         if (Method) {
-            await db.Payments.update({isActive:false},{where:{id}});
-            res.status(200).json('The payment method has been inactivated')
+            if(Method.isActive !== false) {
+                await db.Payments.update({
+                                        isActive:false
+                                        },{
+                                            where:{
+                                                    id
+                                                }
+                                        });
+                res.status(200).json(`The payment method with ${id} has been inactivated`)
+            } else res.status(400).json(`The payment method with ${id} was already inactivated`)
         } else res.status(400).json('The payment method does not exists')
     } catch (error) {
         res.status(404).json(error)        
     }
-}
+};
+
+exports.activatePayment = async (req, res) => {
+    try {
+        const id = parseInt(req.params.id);
+        const Method =  await db.Payments.findOne({
+                                                where:{
+                                                        id
+                                                    }
+                                                });
+        if (Method) {
+            if(Method.isActive !== true){
+                await db.Payments.update({
+                                        isActive:true
+                                        },{
+                                            where:{
+                                                    id  
+                                            }
+                                        });
+                res.status(200).json(`The payment method with ${id} has been activated`)
+            } else res.status(400).json('The payment method is active')
+        } else res.status(400).json('The payment method does not exists')
+    } catch (error) {
+        res.status(404).json(error)        
+    }
+};

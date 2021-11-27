@@ -30,31 +30,6 @@ const adminDefault = async () => {
                 statusorderId:1
             }
         });
-    const userDefault = await db.Users.findOrCreate({
-        where: 
-            {
-            email: 'anflopezoc@gmail.com'
-            },
-        defaults: 
-            {
-            name: 'Andres Felipe Lopez',
-            email: 'anflopezoc@gmail.com',
-            password: bcrypt.hashSync('1234', 10),
-            phone: '33144455598',
-            }
-        });
-
-        await db.Orders.findOrCreate({
-                where:{
-                    email:userDefault[0].email,
-                    statusorderId:1
-                },
-                defaults:{
-                    email:userDefault[0].email,
-                    userId:userDefault[0].id,
-                    statusorderId:1
-                }
-            });
- }
+    }
 
 module.exports = adminDefault;
