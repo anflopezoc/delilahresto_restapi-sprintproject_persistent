@@ -61,8 +61,8 @@ exports.login = async(req, res) => {
                 isAdmin: user.isAdmin
             },config.module.SIGNATUREJWT)
             res.status(202).json({token})
-        } else res.status(401).json('Unauthorized')
-    } else res.status(404).json('User not found')
+        } else res.status(401).send('Sorry, incorrect password')
+    } else res.status(404).send('User not found')
     
    } catch (error) {
        res.status(404).json(error.details[0].message)

@@ -1,5 +1,5 @@
 # Delilah Restó API Order Guide.
-***Sprint Project 2. ***
+***Sprint Project 2***
 
 ## What does this API allow to do?
 Users can register on this API to order from Delilah Restó. This has restricted access in some routes or  paths for only administrator users.
@@ -55,26 +55,45 @@ If the sercer conections is succesfull, you can review the API in the following 
 
     http://localhost:3000/swagger/
 
-## The Admin User Information.
+## The Admin User Access.
 
-The Admin User is created to run the API and has 
+The administrator user has access to all routes with email and password of the following JSON:
 
-## The Paths
+>{
+>email: 'admin@delilah.com'
+>password: 'AdminUser123'
+>}
+
+## The Routes
 
 In the API documentation in Swagger you can see seven routes, in these routes has been resolved:
 
 ### Account 
-
 In this route, users can register and log into the account. The user must log in to get the token to use in Orders, User_addresses (One Path), Products (One Path) and Paymenth Methods (One Path) routes.
 
 ### Users
 ***(Only access to the Admin User)***
+This is the users management route, here the admin user can create, update, inactive and see all users registred and active in Delilah Resto. Here a non-admin user cannot have access.
 
-This is the users management route, here the admin user can create, update, inactive and see all users registred and active in Delilah Resto.
+### User_Addresses
+This is the user address management route. Here users can add, update, delete, and view all user addresses.
 
+### Products
+***(Some paths have only access to the Admin User)***
+This is the product management route. Admin user can add, update, delete and view all products. Non-admin users only have access to the ***'/allproducts'*** path so they can see all products in Delilah Resto ofert. 
 
+### Payment_methods
+***(Some paths have only access to the Admin User)***
+This is the payment method managment route. Admin user can add, update, delete and view all payment methods. Non-admin users only have acces to the ***'/allpayments'*** pathe so they can see all payment methods avaliable for orders in Delilah Resto.
 
+### Orders
+This is the route for orders at Delilah Resto. All users can add and remove the products, add an address to ship and confirm the order in pending status, also the user can see all the orders created by himself.
 
+***Note: The user does not need to create an order, they will always have an order in pending status to be used***
+
+### Order_Managment
+***(Only access to the Admin User)***
+This is the orders managment route at Delilah Resto. In this route, the admin user can change the status of the orders, but cannot change an order in pending status or return to the pending status of an order already confirmed.
 
 
 Thanks for review this API!

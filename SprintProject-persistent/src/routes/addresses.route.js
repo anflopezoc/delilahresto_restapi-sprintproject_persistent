@@ -14,7 +14,7 @@ router.use('/', require('../middlewares/uservalidator.middleware').userexistence
 *      get:
 *          summary: Show all user addresses.
 *          description: End point to show all user adresses.
-*          tags: [User_addresses]
+*          tags: [User_Addresses]
 *          security: 
 *                   - bearerAuth: []         
 *          responses:
@@ -39,7 +39,7 @@ router.get('/alladdresses', controller.allAddresses);
 *      post:
 *          summary: Create a new user address.
 *          description: End point to create a new user address. Return the new user address.
-*          tags: [User_addresses]
+*          tags: [User_Addresses]
 *          security: 
 *                   - bearerAuth: []
 *          requestBody:
@@ -69,7 +69,7 @@ router.post('/newaddress', controller.newAddresses);
 *      put:
 *          summary: Update user address.
 *          description: End point to update a user address ID. Returns a text announcing the update.
-*          tags: [User_addresses]
+*          tags: [User_Addresses]
 *          security: 
 *                   - bearerAuth: []
 *          parameters:
@@ -109,7 +109,7 @@ router.put('/addressupdate/:id', controller.adressUpdate);
 *      delete:
 *          summary: Inactive user address Path.
 *          description: End point to inactivate a user address with ID in parameters. Returns a text announcing that address user is inactivated.
-*          tags: [User_addresses]
+*          tags: [User_Addresses]
 *          security: 
 *                   - bearerAuth: []
 *          parameters:
