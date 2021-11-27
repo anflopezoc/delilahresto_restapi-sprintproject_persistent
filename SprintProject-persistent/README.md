@@ -2,19 +2,23 @@
 ***Sprint Project 2.***
 
 ## What does this API allow to do?
-Users can register on this API to order from Delilah Restó. This has restricted access in some routes or  paths for only administrator users.
+Users can register on this API to order from Delilah Restó. This has restricted access in some routes or paths for only administrator users.
 
 ## What is the technologies used in this API?
 This API has created in NodeJS Javascript with the Express JS framework NodeJS, MariaDB(MySQL) and Sequelize ORM for database, Mocha-Chai for testing, Redis as CACHE technology and Swagger (APi 3.0) documentation.
 
 ## How to init the API?
-First, you need to install the following programs in order to run this API:
+a) First, you need to install the following programs in order to run this API:
 
     -NodeJS
     -MariaDB
     -Redis
 
-You can clone or download the API's repository and then you need to create the .env in the Backend-homework folder. The .env file can use the following settings:
+b)  clone or download this repository with the fllowing url:
+>https://github.com/anflopezoc/delilahresto_restapi-sprintproject_persistent.git
+
+
+c) You need to create the .env in the Backend-homework folder. The .env file can use the following settings:
 
     PORT=3000
     DB_HOST='127.0.0.1'
@@ -31,11 +35,11 @@ The .env file settings can be created based on your preferences and settings on 
 
 ***Note: this API has designed for the create the database with rund 'npm run start', tables and registers default, you don't need to run an SQL query in MariaDB.***
 
-Now, you need to install the API libraries with the following command:
+d) Now, you need to install the API libraries with the following command:
 
     npm install
 
-If the API libraries have been installed successfully, you can run the API with the following commands:
+e) If the API libraries have been installed successfully, you can run the API with the following commands:
 
     npm run start
      
@@ -98,6 +102,7 @@ This is the orders managment route at Delilah Resto. In this route, the admin us
 Thanks for review this API!
 
 API created by:
+
 
 **Andrés Felipe López Ochoa**
 >  Backend Developer
