@@ -95,10 +95,9 @@ This is the route for orders at Delilah Resto. All users can add and remove the 
 ***(Only access to the Admin User)***
 This is the orders managment route at Delilah Resto. In this route, the admin user can change the status of the orders, but cannot change an order in pending status or return to the pending status of an order already confirmed.
 
-
 Thanks for review this API!
 
-Playlist API created by:
+API created by:
 
 **Andrés Felipe López Ochoa**
 >  Backend Developer
