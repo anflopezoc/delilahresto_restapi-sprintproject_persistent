@@ -7,6 +7,9 @@ const PORT = parseInt(config.module.PORT) || 3000;
 const swaggerJsDoc = require('swagger-jsdoc');
 const swaggerUI = require('swagger-ui-express');
 
+const environment = process.env.NODE_ENV;
+const apiDescription = process.env.API_DESCRIPTION;
+
 //DB
 require('./DB/db')
 
@@ -31,7 +34,11 @@ app.use('/orders', require('./routes/orders.route'));
 app.use('/ordermanagement', require('./routes/ordermanagement.route'));
 
 //Server Port
-app.listen(PORT, () => {console.log(`Server in Port ${PORT}`)})
+app.listen(PORT, () => {
+	console.log(`Server in Port ${PORT}`);
+	console.log(`The application is running in the '${environment}' enviroment`);
+        console.log(`Description: '${apiDescription}'`);
+})
 
 module.exports = app;
 
