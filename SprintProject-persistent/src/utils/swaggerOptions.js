@@ -6,7 +6,7 @@ const swaggerOptions = {
         info: {
             title: "REST API Delilah Restó- Sprint Project 2 Acámica with DB",
             version: "2.0.0",
-            description: "REST API for orders of Delilah Restó users made with Node JS and MariaDB"
+            description: "REST API for orders of Delilah Restó users made with Node JS and MariaDB in AWS's cloud"
         },
         servers: [
             {
