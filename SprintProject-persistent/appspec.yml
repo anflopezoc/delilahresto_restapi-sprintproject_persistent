@@ -5,7 +5,7 @@ files:
     destination: /home/ubuntu/sprintproject3/SprintProject-persistent
 hooks:
   ApplicationStop:
-    - location: scripts/aplication_stop.sh
+    - location: scripts/application_stop.sh
       timeout: 300
       runas: ubuntu
   BeforeInstall:
