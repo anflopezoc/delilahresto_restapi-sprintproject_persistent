@@ -8,7 +8,7 @@ module.exports = {
             "API_DESCRIPTION": "This Application is running in development mode"
         },
         env_production:{
-            "NODE_ENV": "prduction",
+            "NODE_ENV": "production",
             "API_DESCRIPTION": "This application is running in production mode. Take care!"
         }
     }]
