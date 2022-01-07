@@ -4,19 +4,15 @@ files:
   - source: /
     destination: /home/ubuntu/sprintproject3/SprintProject-persistent
 hooks:
-  ApplicationStop:
-    - location: scripts/application_stop.sh
-      timeout: 300
-      runas: ubuntu
   BeforeInstall:
     - location: scripts/install_dependencies
       timeout: 300
       runas: ubuntu
-    - location: scripts/before_install.sh
+    - location: scripts/scripts/start_server
       timeout: 300
       runas: ubuntu
-  ApplicationStart:
-    - location: scripts/application_start.sh
+  ApplicationStop:
+    - location: scripts/application_stop.sh
       timeout: 300
       runas: ubuntu
     
