@@ -7,4 +7,4 @@ cd /home/ubuntu/sprintproject3/SprintProject-persistent
 sudo npm install
 
 #start our node app in the background
-pm2 restart api
+pm2 start /home/ubuntu/sprintproject3/SprintProject-persistent/ecosystem.config.js --env production -watch

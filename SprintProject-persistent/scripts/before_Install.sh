@@ -7,7 +7,4 @@ if [ -d "$DIR" ]; then
 else
   echo "Creating ${DIR} directory"
   mkdir ${DIR}
-  cd ${DIR}
-  cp ../tmp/.env .env
 fi
-
