@@ -1,4 +1,4 @@
- version: 0.0
+version: 0.0
 os: linux
 files:
   - source: /
@@ -8,18 +8,10 @@ hooks:
     - location: scripts/application_Stop.sh
       timeout: 300
       runas: ubuntu
-    - location: scripts/stop_server
-      timeout: 300
-      runas: ubuntu
   BeforeInstall:
     - location: scripts/before_Install.sh
       timeout: 300
       runas: ubuntu
-    - location: scripts/install_dependencies
-      timeout: 300
-      runas: ubuntu
-    - location: scripts/start_server
-      timeout: 300
   ApplilcationStart:
     - location: scripts/application_Start.sh
       timeout: 300
