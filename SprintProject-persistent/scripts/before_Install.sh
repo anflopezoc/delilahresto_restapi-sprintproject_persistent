@@ -1,10 +1,10 @@
 #!/bin/bash
-
 #create our working directory if it doesnt exist
 DIR="/home/ubuntu/sprintproject3/SprintProject-persistent"
-if [ -d "$DIR" ]; then
-  echo "${DIR} exists"
-else
-  echo "Creating ${DIR} directory"
-  mkdir ${DIR}
-fi
+
+rm -rf ${DIR}
+mkdir ${DIR}
+
+cd ${DIR}
+
+cp ../tmp/.env .env
