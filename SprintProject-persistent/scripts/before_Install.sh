@@ -1,8 +1,13 @@
-#!/bin/bash
+#!/bin/sh
 #create our working directory if it doesnt exist
 DIR="/home/ubuntu/sprintproject3/SprintProject-persistent"
 
-rm -rf ${DIR}
+if [ -d "$DIR" ]; then
+    echo "$DIR exists"
+    rm -rf ${DIR}
+#    rm -rf ${DIR}/{*,.*}
+fi
+
 mkdir ${DIR}
 
 cd ${DIR}

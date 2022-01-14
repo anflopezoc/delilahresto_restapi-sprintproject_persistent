@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 #Stopping existing node servers
 echo "Stopping any existing node servers"

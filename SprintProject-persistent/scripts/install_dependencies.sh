@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 #install node-modules
 cd /home/ubuntu/sprintproject3/SprintProject-persistent
