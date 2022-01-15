@@ -1,5 +1,5 @@
 version: 0.0
-os: ubuntu 20.04
+os: linux
 files:
   - source: /
     destination: /home/ubuntu/sprintproject3/SprintProject-persistent
