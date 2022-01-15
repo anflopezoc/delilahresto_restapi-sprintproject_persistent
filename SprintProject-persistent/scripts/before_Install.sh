@@ -1,10 +1,5 @@
-#!/bin/bash
-#create our working directory if it doesnt exist
-DIR="/home/ubuntu/sprintproject3/SprintProject-persistent"
+#! /bin/bash
 
-rm -rf ${DIR}
+rm -rf /home/ubuntu/sprintproject3/SprintProject-persistent
 
-mkdir ${DIR}
-
-cd ${DIR}
-
+mkdir /home/ubuntu/sprintproject3/SprintProject-persistent
