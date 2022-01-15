@@ -3,10 +3,14 @@ os: linux
 files:
   - source: /
     destination: /home/ubuntu/sprintproject3/SprintProject-persistent
-hooks:
+    overwrite: true
 hooks:
   ApplicationStop:
     - location: scripts/application_Stop.sh
+      timeout: 300
+      runas: ubuntu
+  BeforeInstall:
+    - location: scripts/before_Install.sh
       timeout: 300
       runas: ubuntu
   ApplilcationStart:
