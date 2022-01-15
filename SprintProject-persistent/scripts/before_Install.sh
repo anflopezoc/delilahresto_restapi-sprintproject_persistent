@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #create our working directory if it doesnt exist
 DIR="/home/ubuntu/sprintproject3/SprintProject-persistent"
 
