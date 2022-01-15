@@ -9,10 +9,6 @@ hooks:
     - location: scripts/application_Stop.sh
       timeout: 300
       runas: ubuntu
-  BeforeInstall:
-    - location: scripts/before_Install.sh
-      timeout: 300
-      runas: ubuntu
   ApplilcationStart:
     - location: scripts/application_Start.sh
       timeout: 300
