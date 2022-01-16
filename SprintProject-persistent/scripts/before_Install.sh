@@ -11,4 +11,3 @@ mkdir ${DIR}
 
 cd ${DIR}
 
-cp ../tmp/.env .env
