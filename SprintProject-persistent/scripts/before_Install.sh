@@ -11,4 +11,4 @@ mkdir ${DIR}
 
 cd ${DIR}
 
-cp ../tmp/.env .env
+cp /home/ubuntu/temp/.env .env
