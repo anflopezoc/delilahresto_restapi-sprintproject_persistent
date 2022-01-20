@@ -1,6 +1,7 @@
 #!/bin/bash
 
 sudo chmod -R 777 /home/ubuntu/sprintproject3/SprintProject-persistent
+
 #navigate into our working directory where we have all our github files
 cd /home/ubuntu/sprintproject3/SprintProject-persistent
 
@@ -11,6 +12,8 @@ export NVM_DIR="$HOME/.nvm"
 
 #install node modules
 npm install
-
+echo "node modules installed"
 #start our node app in the background
+
 pm2 start ecosystem.config.js --env production --watch
+echo "run pm2"
