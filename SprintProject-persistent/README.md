@@ -1,5 +1,5 @@
 # Delilah Restó API Order Guide.
-***Sprint Project 2.***
+***Sprint Project 3.***
 
 ## What does this API allow to do?
 Users can register on this API to order from Delilah Restó. This has restricted access in some routes or paths for only administrator users.
