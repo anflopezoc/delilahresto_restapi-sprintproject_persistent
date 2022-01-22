@@ -1,73 +1,42 @@
 # Delilah Restó API Order Guide.
-***Sprint Project 3.***
+***Sprint Project 3. (My APP Live)***
 
 ## What does this API allow to do?
 Users can register on this API to order from Delilah Restó. This has restricted access in some routes or paths for only administrator users.
 
 ## What is the technologies used in this API?
-This API has created in NodeJS Javascript with the Express JS framework NodeJS, MariaDB(MySQL) and Sequelize ORM for database, Mocha-Chai for testing, Redis as CACHE technology and Swagger (APi 3.0) documentation.
+This API has created in NodeJS Javascript with the Express JS framework NodeJS, MariaDB and Sequelize ORM for database, Mocha-Chai for testing, Redis as CACHE technology and Swagger documentation (APi 3.0).
 
-## How to init the API?
-a) First, you need to install the following programs in order to run this API:
+In addition, this API is hosted in the AWS cloud through the EC2 service and with access from the following domain: https://www.anflopezoc.ga
 
-    -NodeJS
-    -MariaDB
-    -Redis
+## The tech reviwer IAM user 
 
-b)  clone or download this repository with the fllowing url:
->https://github.com/anflopezoc/delilahresto_restapi-sprintproject_persistent.git
+The Tech Reviewer can access to IAM user accout in AWS With the following information: 
+
+>IdUser: 244812671501
+>username: Tech_Reviewer 
+>password: anflopezoc@123
+
+This  AWS IAM user have the **IAMUserChangePassword** and **ReadOnlAccess** permissions polocies (i).
 
 
-c) You need to create the .env in the Backend-homework folder. The .env file can use the following settings:
+## The AWS services usedes in the this architecture.
 
-    PORT=3000
-    DB_HOST='127.0.0.1'
-    DB_PORT='3306'
-    DB_USER='root'
-    DB_PASSWORD='root'
-    DB_DATABASE='sprintproject_anflopezoc'
-    SIGNATUREJWT='SignatureDelilahanflopezocPassword'
-    ADMINPASSWORD='AdminUser123'
-    ADMINUSER='admin@delilah.com'
-    REDISURL='6379'
+In the **Diagram 1**, you can view the used AWS Architecture for the Sprint Project 3 (My APP Live) and yours two integration with the gitlab and github repository.
 
-The .env file settings can be created based on your preferences and settings on the PC for API review, MariaDB and Redis.
 
-***Note: this API has designed for the create the database with rund 'npm run start', tables and registers default, you don't need to run an SQL query in MariaDB.***
+**Diagram 1. AWS Architecture Diagram** - 
+![AWS Architecture Diagram](https://anflopezoc.ga/Images/AWS+Architecture+Diagram+-+Sprint+Project+3.jpg)
 
-d) Now, you need to install the API libraries with the following command:
 
-    npm install
+## What is the AWS services used in this Project?
 
-e) If the API libraries have been installed successfully, you can run the API with the following commands:
 
-    npm run start
-     
-Or
+### 1. EC2 Instance:
+hosting the API in the EC2 instance (d), in the us-east-1 region, with the Ubuntu Server 20.04 LTS and the t2.micro type instance.
 
-    npm run dev 
 
-This API has unit tests on the account path. You can run API unit tests with the following commands:
-
-    npm run test
-
-***Note: before running unit tests, you must run the API (npm run dev or npm run start) to avoid unit tests failures.***
-
-The server API is running when you can see in terminall "Server in Port 3000" and "DB connection has been established successfully."
-
-If the sercer conections is succesfull, you can review the API in the following URL:
-
-    http://localhost:3000/swagger/
-
-## The Admin User Access.
-
-The administrator user has access to all routes with email and password of the following JSON:
-
->{
->email: 'admin@delilah.com'
->password: 'AdminUser123'
->}
-
+`                                                       
 ## The Routes
 
 In the API documentation in Swagger you can see seven routes, in these routes has been resolved:
