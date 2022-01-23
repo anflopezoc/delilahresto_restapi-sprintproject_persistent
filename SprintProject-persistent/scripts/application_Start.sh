@@ -1,7 +1,5 @@
 #!/bin/bash
 
-sudo chmod -R 777 /home/ubuntu/sprintproject3/SprintProject-persistent
-
 #navigate into our working directory where we have all our github files
 cd /home/ubuntu/sprintproject3/SprintProject-persistent
 
@@ -11,7 +9,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # loads nvm bash_completion (node is in path now)
 
 #install node modules
-npm install
+sudo npm install
 echo "node modules installed"
 #start our node app in the background
 
