@@ -20,7 +20,7 @@ The Tech Reviewer can access to IAM user accout in AWS With the following inform
 This  AWS IAM user have the **IAMUserChangePassword** and **ReadOnlAccess** permissions polocies (i).
 
 
-## The AWS services usedes in the this architecture.
+## The cloud AWS services usedes in the API's architecture.
 
 In the **Diagram 1**, you can view the used AWS Architecture for the Sprint Project 3 (My APP Live) and yours two integration with the gitlab and github repository.
 
@@ -35,8 +35,17 @@ In the **Diagram 1**, you can view the used AWS Architecture for the Sprint Proj
 ### 1. EC2 Instance:
 hosting the API in the EC2 instance (d), in the us-east-1 region, with the Ubuntu Server 20.04 LTS and the t2.micro type instance.
 
+As seen in the diagram 1, here found two instance:
+ 1. Instance for AMI: is the EC2 instanc with only acces with the device developer IP with from ssh (22) port. With this EC2 instance create the IAM and Launch Template asociated with the Auto Scaling Group service.  
 
-`                                                       
+ 2. Instance A: is the EC2 instance create with the IAM and Launch Template asociated with the Auto Scaling Group. This has a temporary security group with the ssh port accessible from anywhere and others port 
+
+ The instance A have **continius integration** (l) with the master branch from this GitHub repository through the CodeDeploy service and have relation with the target group and load balancer. 
+
+
+
+
+
 ## The Routes
 
 In the API documentation in Swagger you can see seven routes, in these routes has been resolved:
