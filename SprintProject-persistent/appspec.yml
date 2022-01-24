@@ -5,10 +5,6 @@ files:
     destination: /home/ubuntu/sprintproject3/SprintProject-persistent
     overwrite: true
 hooks:
-  ApplicationStop:
-    - location: scripts/application_Stop.sh
-      timeout: 300
-      runas: ubuntu
   BeforeInstall:
     - location: scripts/before_Install.sh
       timeout: 300
