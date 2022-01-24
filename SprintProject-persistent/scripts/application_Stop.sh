@@ -2,4 +2,5 @@
 
 #Stopping existing node servers
 echo "Stopping any existing node servers"
-pkill -f pm2
+sudo pm2 kill
+pkill pm2
