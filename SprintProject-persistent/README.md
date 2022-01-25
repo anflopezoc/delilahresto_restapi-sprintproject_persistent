@@ -120,6 +120,10 @@ The administrator user has access to all routes with email and password of the f
 
 ## Routes
 
+You can access the API through the following url:
+
+    https://www.anflopezoc.ga/swagger/
+
 In the API documentation in Swagger you can see seven routes, in these routes has been resolved:
 
 ### Account 
