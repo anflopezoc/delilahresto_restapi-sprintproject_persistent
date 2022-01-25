@@ -51,7 +51,7 @@ The load balancer configuration listens for HTTPS: 443 with the ACM www.anflopez
 The infraestructure have a launch configuration and the Auto Scaling Group (13) related to the launc template and AMI from Sprint Project and the following configuration:
 
 **Table 1. Auto Scaling Capacity**
-| Capacity | # |
+| Capacity | Q |
 |--|--|
 | Desired | 1 |
 | Minimum | 1 |
@@ -65,16 +65,50 @@ Here have a hostedzone with the domain anflopezoc.ga with two register:
 
 These register have been certified in AWS Certificate Management (a).
 
+### RDS
+
+This project have a RDS instance from MariaDB with (f) the free tier.
+
+### Amazon ElastiCache 
+
+This project use Amazon ElastiCache for Redis service (p) supported with cache.t2.micro node type.
+
+### S3 bucket + CloudFront 
+
+The project have the s3 bucket with index.html, style.css and folders integrated with a [Gitlab repository](https://gitlab.com/anflopezoc/sprintproject3-cicd-s3). In addition, there is a Cloudfront distribution service with connection to this bucket and the anflopezoc.ga certificate.
 
 
+### CI/CD
+
+The project have two integration (i) (see Diagram 1):
+
+1. Integration with a [Gitlab repository](https://gitlab.com/anflopezoc/sprintproject3-cicd-s3) and S3.
+
+2. Integration with the master branch from this [Github repository](https://github.com/anflopezoc/delilahresto_restapi-sprintproject_persistent/tree/master/SprintProject-persistent) trough the AWS CodeDeploy service with application configuration and code pipeline between the github repository and EC2 instance A or instances created by the Autoscaling Group.
+Each instance has a Agent CodeDeploy and the EC2CodeDeploy role (watch in AIM Role).
 
 
+## EC2 instance Access
+
+If you have a .pem file relationated with the instance, you can access to the bash console of the following way:
+
+- In Windows PowerShell and from directory with the .pem file:
+    `ssh -i /path/my-key-pair.pem ubuntu@my-instance-public-dns-name`
+
+- In Bash from WSL (Windows) or Linux
+    `sudo ssh -i /path/my-key-pair.pem ubuntu@my-instance-public-dns-name`
+
+Example:
+
+`sudo ssh -i /home/ubuntu/download/Sprint3.pem ubuntu@34.236.243.106`
 
 
+If the connection to the bash console from the instance is successful, you can view the pm2 process with the `pm2 list` command and view the API files with the following command:
+
+`cd /home/ubuntu/sprintproject3/SprintProject-persistent`
 
 
-
-## The Routes
+## About API 
 
 In the API documentation in Swagger you can see seven routes, in these routes has been resolved:
 
