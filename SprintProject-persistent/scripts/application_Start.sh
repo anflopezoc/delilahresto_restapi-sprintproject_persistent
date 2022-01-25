@@ -6,7 +6,7 @@ cd /home/ubuntu/sprintproject3/SprintProject-persistent
 #start our node app in the background
 
 #install node modules
-npm install
+sudo npm install
 echo "node modules installed"
 
 #start our node app in the background
