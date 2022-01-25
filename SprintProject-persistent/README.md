@@ -1,6 +1,8 @@
 # Delilah Restó API Order Guide.
 ***Sprint Project 3. (My APP Live)***
 
+This is Sprint Project 3 (My APP Live) about creating the cloud architecture needed for the app.
+
 ## What does this API allow to do?
 Users can register on this API to order from Delilah Restó. This has restricted access in some routes or paths for only administrator users.
 
@@ -22,25 +24,25 @@ This  AWS IAM user have the **IAMUserChangePassword** and **ReadOnlAccess** perm
 
 ## The cloud AWS services usedes in the API's architecture.
 
-In the **Diagram 1**, you can view the used AWS Architecture for the Sprint Project 3 (My APP Live) and yours two integration with the gitlab and github repository.
+In the **Diagram 1**, you can see the used AWS Architecture for the Sprint Project 3 (My APP Live) and yours two integration with the gitlab and github repository.
 
 
 **Diagram 1. AWS Architecture Diagram** - 
 ![AWS Architecture Diagram](https://anflopezoc.ga/Images/AWS+Architecture+Diagram+-+Sprint+Project+3.jpg)
 
 
-## What is the AWS services used in this Project?
+## What are the AWS services used in this roject?
 
 
 ### 1. EC2 Instance:
-hosting the API in the EC2 instance (d), in the us-east-1 region, with the Ubuntu Server 20.04 LTS and the t2.micro type instance.
+This API hosts the on the EC2 instance (d), in the us-east-1 region, with Ubuntu Server 20.04 LTS and the t2.micro type instance.
 
-As seen in the diagram 1, here found two instance:
- 1. Instance for AMI: is the EC2 instanc with only acces with the device developer IP with from ssh (22) port. With this EC2 instance create the IAM (n) and Launch Template asociated with the Auto Scaling Group service.  
+As seen in the diagram 1, there are two  instance:
+ 1. Instance for AMI: thi is the  EC2 instance that is only accessed with the device developer IP from the ssh port (22). Using this EC2 instance, create the IAM(n) and Launch Template associated with the Auto Scaling Group service.
 
- 2. Instance A: is the EC2 instance create with the IAM and Launch Template asociated with the Auto Scaling Group. This has a temporary security group with the ssh port accessible from anywhere and others port 
+ 2. Instance A: this is the EC2 instance create with the IAM and Launch Template associated with the Auto Scaling Group. This has a temporary security group with the ssh port accessible from anywhere and others port 
 
- The instance A have **continius integration** (l) with the master branch from this GitHub repository through the CodeDeploy service and have relation with the target group and load balancer. 
+ Instance A have **continius integration** (l) with the master branch from this GitHub repository through the CodeDeploy service and have relation with the target group and load balancer. 
 
 ### 2. Elastic Load Balancer (c):
 Instance A registers with the target group over port 443 with the health check setting starting at an interval of 60 seconds (j).
@@ -108,7 +110,15 @@ If the connection to the bash console from the instance is successful, you can v
 `cd /home/ubuntu/sprintproject3/SprintProject-persistent`
 
 
-## About API 
+# About API 
+
+## The Admin User Access.
+
+The administrator user has access to all routes with email and password of the following JSON:
+
+`{ email: 'admin@delilah.com' password: 'AdminUser123' }`
+
+## Routes
 
 In the API documentation in Swagger you can see seven routes, in these routes has been resolved:
 
@@ -139,9 +149,9 @@ This is the route for orders at Delilah Resto. All users can add and remove the 
 ***(Only access to the Admin User)***
 This is the orders managment route at Delilah Resto. In this route, the admin user can change the status of the orders, but cannot change an order in pending status or return to the pending status of an order already confirmed.
 
-Thanks for review this API!
+Thanks for review this Sprint Project!
 
-API created by:
+by:
 
 
 **Andrés Felipe López Ochoa**
