@@ -14,7 +14,7 @@
     "swagger-ui-express": "^4.1.6"
   },
   "name": "sprintproject-persistente",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "description": "Sprint Project REST-API  Delilah Resto",
   "main": "server.js",
   "scripts": {
