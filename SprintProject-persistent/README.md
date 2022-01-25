@@ -11,7 +11,7 @@ This API has created in NodeJS Javascript with the Express JS framework NodeJS, 
 
 In addition, this API is hosted in the AWS cloud through the EC2 service and with access from the following domain: https://www.anflopezoc.ga
 
-## The tech reviwer IAM user 
+## The tech reviewer IAM user 
 
 The Tech Reviewer can access to IAM user accout in AWS With the following information: 
 
