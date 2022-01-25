@@ -36,11 +36,39 @@ In the **Diagram 1**, you can view the used AWS Architecture for the Sprint Proj
 hosting the API in the EC2 instance (d), in the us-east-1 region, with the Ubuntu Server 20.04 LTS and the t2.micro type instance.
 
 As seen in the diagram 1, here found two instance:
- 1. Instance for AMI: is the EC2 instanc with only acces with the device developer IP with from ssh (22) port. With this EC2 instance create the IAM and Launch Template asociated with the Auto Scaling Group service.  
+ 1. Instance for AMI: is the EC2 instanc with only acces with the device developer IP with from ssh (22) port. With this EC2 instance create the IAM (n) and Launch Template asociated with the Auto Scaling Group service.  
 
  2. Instance A: is the EC2 instance create with the IAM and Launch Template asociated with the Auto Scaling Group. This has a temporary security group with the ssh port accessible from anywhere and others port 
 
  The instance A have **continius integration** (l) with the master branch from this GitHub repository through the CodeDeploy service and have relation with the target group and load balancer. 
+
+### 2. Elastic Load Balancer (c):
+Instance A registers with the target group over port 443 with the health check setting starting at an interval of 60 seconds (j).
+
+The load balancer configuration listens for HTTPS: 443 with the ACM www.anflopezoc.ga 
+
+### 3. Autoscaling 
+The infraestructure have a launch configuration and the Auto Scaling Group (13) related to the launc template and AMI from Sprint Project and the following configuration:
+
+**Table 1. Auto Scaling Capacity**
+| Capacity | # |
+|--|--|
+| Desired | 1 |
+| Minimum | 1 |
+| Maximum | 2 | 
+
+### Route 53
+
+Here have a hostedzone with the domain anflopezoc.ga with two register:
+- www.anflopezoc.ga with alias loadbalancer https 
+- anflopezoc.ga with alias cloudfront 
+
+These register have been certified in AWS Certificate Management (a).
+
+
+
+
+
 
 
 
