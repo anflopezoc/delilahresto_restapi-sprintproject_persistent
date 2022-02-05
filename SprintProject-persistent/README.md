@@ -28,7 +28,7 @@ In the **Diagram 1**, you can see the used AWS Architecture for the Sprint Proje
 
 
 **Diagram 1. AWS Architecture Diagram** - 
-![AWS Architecture Diagram](https://anflopezoc.ga/Images/AWS+Architecture+Diagram+-+Sprint+Project+3.jpg)
+![AWS Architecture Diagram](https://bucket.anflopezoc.ga/Images/AWS+Architecture+Diagram+-+Sprint+Project+3.jpg)
 
 
 ## What are the AWS services used in this roject?
