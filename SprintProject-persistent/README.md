@@ -68,7 +68,6 @@ Here have a hostedzone with the domain anflopezoc.ga with two register:
 These register have been certified in AWS Certificate Management (a).
 
 ### RDS
-
 This project have a RDS instance from MariaDB with (f) the free tier.
 
 ### Amazon ElastiCache 
