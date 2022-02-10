@@ -6,12 +6,21 @@ const helmet = require('helmet');
 const PORT = parseInt(config.module.PORT) || 3000;
 const swaggerJsDoc = require('swagger-jsdoc');
 const swaggerUI = require('swagger-ui-express');
+const passport = require('passport')
+
 
 const environment = process.env.NODE_ENV;
 const apiDescription = process.env.API_DESCRIPTION;
-
 //DB
 require('./DB/db')
+
+// Add headers before the routes are defined
+app.use(cors());
+app.use(passport.initialize())
+
+app.use(require('./routes/public'));
+app.use(require('./routes/auth'));
+
 
 //Swagger
 const swaggerOptions = require('./utils/swaggerOptions');
