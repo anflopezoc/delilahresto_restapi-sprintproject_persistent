@@ -3,6 +3,7 @@ const app = express();
 const config = require('./config/config')
 const eJWT = require('./middlewares/expressJWT')
 const helmet = require('helmet');
+const cors = require('cors')
 const PORT = parseInt(config.module.PORT) || 3000;
 const swaggerJsDoc = require('swagger-jsdoc');
 const swaggerUI = require('swagger-ui-express');
