@@ -8,6 +8,8 @@ const PORT = parseInt(config.module.PORT) || 3000;
 const swaggerJsDoc = require('swagger-jsdoc');
 const swaggerUI = require('swagger-ui-express');
 const passport = require('passport')
+const public_routes = require('./routes/public')
+const auth_routes = require('./routes/auth')
 
 
 const environment = process.env.NODE_ENV;
@@ -19,8 +21,8 @@ require('./DB/db')
 app.use(cors());
 app.use(passport.initialize())
 
-app.use(require('./routes/public'));
-app.use(require('./routes/auth'));
+app.use(public_routes);
+app.use(auth_routes);
 
 
 //Swagger
