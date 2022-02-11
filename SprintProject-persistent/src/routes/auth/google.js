@@ -22,4 +22,8 @@ router.get(`/${strategy_name}/callback`,
 
   });
 
+router.get('/google', (req,res) => {
+  res.send('Hello from Google Test path')
+})
+
 module.exports = router;
