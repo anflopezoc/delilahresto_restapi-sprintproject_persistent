@@ -23,6 +23,7 @@ router.get(`/${strategy_name}/callback`,
   });
 
 router.get('/google', (req,res) => {
+  console.log('Hello from Google');
   res.send('Hello from Google Test path')
 })
 
