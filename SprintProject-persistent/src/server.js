@@ -10,7 +10,7 @@ const swaggerUI = require('swagger-ui-express');
 const passport = require('passport')
 const public_routes = require('./routes/public')
 const auth_routes = require('./routes/auth/index')
-
+require('./services')
 
 const environment = process.env.NODE_ENV;
 const apiDescription = process.env.API_DESCRIPTION;
