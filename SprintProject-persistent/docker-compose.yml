@@ -1,15 +1,11 @@
 version: "3.9"  # optional since v1.27.0
 services:
-  web:
-    build: .
+  app:
+    container_name: nodeimage
+    restart: always 
+    build: ./
     ports:
       - "3000:3000"
-    volumes:
-      - .:/code
-      - logvolume01:/var/log
-    links:
-      - redis
-  redis:
-    image: redis
-volumes:
-  logvolume01: {}
+    environment:
+      - HOST=0.0.0.0
+      - PORT=3000

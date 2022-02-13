@@ -1,0 +1,6 @@
+Create container: docker build -t SprintProject
+run:  docker run -p 3000:3000 SprintProject
+
+docker pull node:current-alpine3.15
+
+docker-compose up
