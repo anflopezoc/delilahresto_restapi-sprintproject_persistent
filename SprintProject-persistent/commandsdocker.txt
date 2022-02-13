@@ -4,3 +4,7 @@ run:  docker run -p 3000:3000 SprintProject
 docker pull node:current-alpine3.15
 
 docker-compose up
+
+sudo apt install docker.io
+
+sudo apt install docker-compose
