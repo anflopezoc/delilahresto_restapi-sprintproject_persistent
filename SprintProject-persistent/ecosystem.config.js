@@ -14,6 +14,7 @@ module.exports = {
                 "API_DESCRIPTION": "This application is running in production mode. Take care!"
             }
         },
+        
         {
             script: 'worker.js',
             name: 'worker'
