@@ -7,9 +7,10 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 RUN npm install
+RUN npm i -g pm2@latest
 
 COPY . .
 
-CMD [ "npm","run","start" ]
+CMD ["pm2-runtime", "start","ecosystem.config_dockerV.js","--env","production"]
 
 
