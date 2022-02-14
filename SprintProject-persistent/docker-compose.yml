@@ -1,8 +1,10 @@
-version: "3.3"  # optional since v1.27.0
+version: "3" 
 services:
   app:
-    container_name: nodeimage
+    image: nodeimage
+    container_name: nodeserver
     restart: always 
     build: ./
     ports:
       - "3000:3000"
+    
