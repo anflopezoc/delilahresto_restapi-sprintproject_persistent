@@ -11,6 +11,6 @@ RUN npm i -g pm2@latest
 
 COPY . .
 
-CMD ["pm2-runtime", "start","ecosystem.config_dockerV.js","--env","production"]
+CMD ["pm2-runtime","start","ecosystem.config.js","--env","production","--watch"]
 
 
