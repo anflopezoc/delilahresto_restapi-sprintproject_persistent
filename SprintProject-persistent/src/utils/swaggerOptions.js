@@ -4,7 +4,7 @@ const swaggerOptions = {
     definition: {
         openapi: "3.0.0",
         info: {
-            title: "REST API Delilah Restó- Sprint Project 4 in AWS's Cloud, login with idPs and payment gateways integration",
+            title: "REST API Delilah Restó- Sprint Project 4 in AWS's Cloud, login with others integration",
             version: "3.0.0",
             description: "REST API for orders of Delilah Restó users made with Node JS on a EC2 AWS instance, MariaDB on RDS  and  Redis Cache in AWS's cloud CICD version"
         },
