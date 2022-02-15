@@ -14,7 +14,7 @@ export NVM_DIR="$HOME/.nvm"
 npm install
 
 #Run docker with docker-compose
-sudo docker-compose ps
+docker-compose up -d
 
 
 
