@@ -11,8 +11,14 @@ sudo apt install docker-compose
 
 CMD ["pm2-runtime", "start","ecosystem.config_dockerV.js","--env","production"]
 
-docker exec -it <container-id> pm2 monit
 
+/////Run server
+
+docker build -t nodeserver .
+
+
+docker exec -it <container-id> pm2 monit
+                                            
 
 *** Adicionar grupo usuario en ubuntu a docker
 

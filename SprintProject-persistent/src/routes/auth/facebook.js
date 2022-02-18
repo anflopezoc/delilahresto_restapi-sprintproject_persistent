@@ -4,7 +4,7 @@ const passport = require('passport');
 const strategy_name = 'facebook';
 require('dotenv').config()
 
-router.get(`/${strategy_name}/auth`, passport.authenticate(strategy_name, { session:false,  scope: ['profile', 'email'] }));
+router.get(`/${strategy_name}/auth`, passport.authenticate(strategy_name, { session:false,  scope: ['email'] }));
 
 router.get(`/${strategy_name}/callback`, 
   passport.authenticate(strategy_name, { session:false, failureRedirect: '/failed' }),

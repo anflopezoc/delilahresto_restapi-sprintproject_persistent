@@ -14,3 +14,5 @@ COPY . .
 CMD ["pm2-runtime","start","ecosystem.config.js","--env","production","--watch"]
 
 
+
+ 
